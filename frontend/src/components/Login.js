@@ -21,11 +21,13 @@ function Login ({ onLogin }){
           <h3 className="auth-form__title">Вход</h3>
           <label className="auth-form__input">
             <input type="text" name="name" id="email"
+              autoComplete="username"
               className="auth-form__textfield" placeholder="Email"
               onChange={e => setEmail(e.target.value)} required  />
           </label>
           <label className="auth-form__input">
             <input type="password" name="password" id="password"
+              autoComplete="current-password"
               className="auth-form__textfield" placeholder="Пароль"
               onChange={e => setPassword(e.target.value)} required  />
           </label>
