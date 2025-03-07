@@ -13,11 +13,16 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "set PORT=8080 && react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "test:microfrontend": "npx jest ./index.spec.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:host": "cd microfrontend/host & npm run start",
+    "start:auth": "cd microfrontend/auth & npm run start",
+    "start:profile": "cd microfrontend/profile & npm run start",
+    "start:cards": "cd microfrontend/cards & npm run start",
+    "start:all": "concurrently --kill-others \"npm run start:host\" \"npm run start:auth\" \"npm run start:profile\" \"npm run start:cards\""
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +45,7 @@
   "devDependencies": {
     "@playwright/test": "^1.45.0",
     "@types/node": "^20.14.9",
+    "concurrently": "^9.1.2",
     "dotenv": "^16.0.2",
     "wait-port": "^1.1.0"
   }
