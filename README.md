@@ -58,18 +58,19 @@
 **Компоненты и модули**
 
 - Абстрактные
+
   - ProtectedRoute.js
   - PopupWithForm.js
   - Header.js
   - Footer.js
-  
 - Страницы
+
   - Login.js
   - Register.js
   - Main.js
     - Card.js
-
 - Главный компонент - App.js
+
   - Header.js
   - Footer.js
   - ProtectedRoute.js
@@ -140,6 +141,7 @@
 - Статичные файлы - иконки, шрифты, картинки.
 
 Основные функции компонентов:
+
 - Компонент App отвечает за маршрутизацию приложения, отображение всплывающих окон, выполняет вызовы к апи по событиям компонентов;
 - Компонент Main отображает информацию о пользователе и список загруженных картинок, так же триггерит события редактирования профиля и картинок, работает с сервисом api;
 - Компонент Register отвечает за регистрацию пользователя, работает с сервисом auth;
@@ -152,6 +154,7 @@
 # 2. Планирование изменений
 
 Разделим приложение на микрофронтенды и выделим некоторые переиспользуемые компоненты в библиотеку shared:
+
 - auth - приложение авторизации и регистрации пользователя
   - components
     - InfoTooltip.js - Всплывающее окно результата авторизации
@@ -201,3 +204,9 @@
   - context
     - CurrentUserContext.js - Контекст приложения
   - images - Общие картинки
+
+# 3. Декомпозировать веб-приложения на Django на микросервисы
+
+Ссылка на решение: [схема](https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=arch_template_task2.drawio&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1ZlSuz9831yvADY0-wbngarsdJkuYtpso%26export%3Ddownload)
+
+Файл: /arch_template_task2.drawio
