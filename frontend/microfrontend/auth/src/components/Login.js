@@ -1,10 +1,14 @@
 import React from 'react';
+import * as auth from "../utils/auth.js";
 
-import '../blocks/login/login.css';
+import '../index.css';
 
 function Login ({ onLogin }){
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isInfoToolTipOpen, setIsInfoToolTipOpen] = React.useState(false);
+  const [tooltipStatus, setTooltipStatus] = React.useState("");
 
   function handleSubmit(e){
     e.preventDefault();
@@ -12,7 +16,15 @@ function Login ({ onLogin }){
       email,
       password
     }
-    onLogin(userData);
+    auth
+      .login(email, password)
+      .then((res) => {
+        onLogin(email);
+      })
+      .catch((err) => {
+        setTooltipStatus("fail");
+        setIsInfoToolTipOpen(true);
+      });
   }
   return (
     <div className="auth-form">
